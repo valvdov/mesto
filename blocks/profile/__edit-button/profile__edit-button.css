@@ -4,7 +4,7 @@
   border: 1px solid #fff;
   display: flex;
   justify-content: center;
-  background-color: Transparent;
+  background-color: transparent;
   margin-left: 18px;
   margin-top: 33px;
   padding: 0;
@@ -24,6 +24,5 @@
     margin-top: 10px;
     height: 18px;
     min-width: 18px;
-
   }
 }
