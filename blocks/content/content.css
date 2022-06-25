@@ -4,7 +4,7 @@
 }
 
 @media screen and (max-width: 658px) {
-  .footer__copyright {
+  .content {
     margin-top: 42px;
     margin-bottom: 48px;
   }

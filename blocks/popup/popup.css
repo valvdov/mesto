@@ -13,6 +13,6 @@
   /* display: none; */
 }
 
-.popup__open {
+.popup_opened {
   display: flex;
 }
