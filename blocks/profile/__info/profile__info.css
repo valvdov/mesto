@@ -1,0 +1,16 @@
+.profile__info {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+}
+/* @media screen and (max-width: 906px) {
+  .profile__info {
+  }
+} */
+
+@media screen and (max-width: 658px) {
+  .profile__info {
+    max-width: 282px;
+    margin: 0 auto;
+  }
+}

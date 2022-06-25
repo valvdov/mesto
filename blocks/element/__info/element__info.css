@@ -1,0 +1,8 @@
+.element__info {
+  display: flex;
+  flex-direction: row;
+  max-width: 246px;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}

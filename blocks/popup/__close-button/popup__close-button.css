@@ -1,0 +1,26 @@
+.popup__close-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 32px;
+  width: 32px;
+  background-image: url(../../../images/close_icon.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+  margin-left: 463px;
+  margin-bottom: 8px;
+}
+.popup__close-button:hover {
+  opacity: 0.3;
+}
+
+@media screen and (max-width: 658px) {
+  .popup__close-button {
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    margin: 0 0 16px 265px;
+  }
+}
