@@ -12,7 +12,3 @@
   left: 0;
   /* display: none; */
 }
-
-.popup_opened {
-  display: flex;
-}
