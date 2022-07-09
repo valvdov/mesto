@@ -1,21 +1,19 @@
-.popup__job {
+.popup__text {
   border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 358px;
-  height: 14px;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  padding: 0 0 12px;
+  padding: 0 0 9px;
+  margin: 0 auto 30px;
   color: #000000;
-  margin: 0 0 48px;
 }
 
 @media screen and (max-width: 658px) {
-  .popup__job {
+  .popup__text {
     width: 238px;
-    margin-bottom: 45px;
   }
 }

@@ -1,5 +1,5 @@
 .profile__job {
-  color: #FFF;
+  color: #fff;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -25,7 +25,9 @@
   .profile__job {
     font-size: 14px;
     line-height: 17px;
-    margin: 0 auto 36px;
+    margin-bottom: 31px;
+    margin-left: 13px;
     max-width: 220px;
+    text-align: center;
   }
 }

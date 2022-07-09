@@ -1,5 +1,5 @@
 .profile__name {
-  color: #FFF;
+  color: #fff;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -26,7 +26,8 @@
   .profile__name {
     font-size: 27px;
     line-height: 33px;
-    margin-bottom: 14px;
+    margin-top: -3px;
+    margin-bottom: 7px;
     max-width: 220px;
   }
 }
