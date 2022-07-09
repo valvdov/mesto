@@ -1,4 +1,4 @@
-.element__info {
+.card__info {
   display: flex;
   flex-direction: row;
   max-width: 246px;

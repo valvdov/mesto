@@ -26,51 +26,8 @@
       <button class="profile__add-button" aria-label="Add" type="button">
       </button>
     </section>
-    <section class="elements">
-      <article class="element">
-        <img class="element__image" src="./images/karachevo.png" alt="Карачаевск">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button class="element__like" type="button" aria-label="Like"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/elbrus.png" alt="Гора эльбрус">
-        <div class="element__info">
-          <h2 class="element__title">Гора эльбрус
-          </h2>
-          <button class="element__like" type="button" aria-label="Like"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/seliger.png" alt="Озеро Селигер">
-        <div class="element__info">
-          <h2 class="element__title">Озеро Селигер
-          </h2>
-          <button class="element__like" type="button" aria-label="Like"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/kurshskaya.png" alt="Куршская коса">
-        <div class="element__info">
-          <h2 class="element__title">Куршская коса</h2>
-          <button class="element__like" type="button" aria-label="Like"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/Dombai.png" alt="Домбай">
-        <div class="element__info">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__like" type="button" aria-label="Like"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/lenskie_stolbi.png" alt="Ленские столбы">
-        <div class="element__info">
-          <h2 class="element__title">Ленские столбы</h2>
-          <button class="element__like" type="button" aria-label="Like"></button>
-        </div>
-      </article>
+    <section class="cards">
+
     </section>
   </main>
   <footer class="footer">
@@ -78,19 +35,61 @@
       &copy; 2022 Valerii Vdovin
     </p>
   </footer>
-  <div class="popup">
-    <button class="popup__close-button" type="button" aria-label="Close"></button>
-    <div class="popup__element">
+<section class="popup" id="popup">
+<!--popup Edit Profile-->
+  <div class="popup" id="popup-edit">
+    <button class="popup__close-button" id="popup-edit__close-button" type="button" aria-label="Close"></button>
+    <div class="popup__element" id="popup-edit__element">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form name="popup_form" class="popup__form"> 
-        <input type="text" name="popup_name" class="popup__text">
-        <input type="text" name="popup_job" class="popup__text">
+      <form id="popup-edit__form" class="popup__form">
+        <input type="text" placeholder="Имя" id="popup-edit__name" class="popup__text">
+        <input type="text" placeholder="Профессия" id="popup-edit__job" class="popup__text">
          <button class="popup__submit-button" aria-label="Submit">
         Сохранить
         </button>
       </form>
     </div>
   </div>
+
+<!--popup Add photo-->
+  <div class="popup" id="popup-add">
+    <button class="popup__close-button" id="popup-add__close-button" type="button" aria-label="Close"></button>
+    <div class="popup__element" id="popup-add__element">
+      <h2 class="popup__title">Новое место</h2>
+      <form id="popup-add__form" class="popup__form">
+        <input type="text" placeholder="Название" id="popup-add__place" class="popup__text">
+        <input type="url" placeholder="Ссылка на картинку" id="popup-add__link" class="popup__text">
+        <button class="popup__submit-button" id="popup-add__submit-button" aria-label="Submit">
+          Создать
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="popup__fullscreen" class="popup">
+    <article class="popup__fullscreen" id="popup__article">
+      <img class="popup__fullscreen-image " src="" alt="">
+      <button aria-label="Close" type="button" id="popup__fullscreen-close" class="popup__close-button popup__close-button_fullscreen"></button>
+      <h2 class="popup__fullscreen-title"></h2>
+      </article>
+      </div>
+
+</section>
+
+  <!--card template-->
+  <template class="card-template">
+    <article class="card">
+      <button class="card__delete" type="button" aria-label="Delete"></button>
+     <button class="card__image-button">
+       <img class="card__image" src="" alt="">
+     </button>
+      <div class="card__info">
+        <h2 class="card__title">
+        </h2>
+        <button class="card__like" type="button" aria-label="Like"></button>
+      </div>
+    </article>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
