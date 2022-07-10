@@ -1,4 +1,13 @@
 .popup__close-button_fullscreen {
     margin-top: -40px;
-    margin-left: 8px;
+    margin-right: -40px;
+    position: absolute;
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 658px) {
+    .popup__close-button_fullscreen {
+        margin-right: 0;
+        margin-top: -36px;
+    }
 }

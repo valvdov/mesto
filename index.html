@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>МЕСТО</title>
     <link rel="stylesheet" href="./pages/index.css">
+    <script defer src="./scripts/cards.js"></script>
+    <script defer src="./scripts/index.js"></script>
 </head>
 <body class="page">
   <header class="header">
@@ -19,11 +21,11 @@
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__job">Исследователь океана</p>
           </div>
-          <button class="profile__edit-button" aria-label="Edit" type="button">
+          <button class="profile__edit-button" aria-label="Редактировать профиль" type="button">
           </button>
         </div>
       </div>
-      <button class="profile__add-button" aria-label="Add" type="button">
+      <button class="profile__add-button" aria-label="Добавить место" type="button">
       </button>
     </section>
     <section class="cards">
@@ -35,16 +37,16 @@
       &copy; 2022 Valerii Vdovin
     </p>
   </footer>
-<section class="popup" id="popup">
+
 <!--popup Edit Profile-->
   <div class="popup" id="popup-edit">
-    <button class="popup__close-button" id="popup-edit__close-button" type="button" aria-label="Close"></button>
+    <button class="popup__close-button" id="popup-edit__close-button" type="button" aria-label="Закрыть"></button>
     <div class="popup__element" id="popup-edit__element">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form id="popup-edit__form" class="popup__form">
-        <input type="text" placeholder="Имя" id="popup-edit__name" class="popup__text">
-        <input type="text" placeholder="Профессия" id="popup-edit__job" class="popup__text">
-         <button class="popup__submit-button" aria-label="Submit">
+        <input type="text" placeholder="Имя" id="popup-edit__name" class="popup__text" required>
+        <input type="text" placeholder="Профессия" id="popup-edit__job" class="popup__text" required>
+         <button class="popup__submit-button" aria-label="Сохранить">
         Сохранить
         </button>
       </form>
@@ -53,43 +55,42 @@
 
 <!--popup Add photo-->
   <div class="popup" id="popup-add">
-    <button class="popup__close-button" id="popup-add__close-button" type="button" aria-label="Close"></button>
+    <button class="popup__close-button" id="popup-add__close-button" type="button" aria-label="Закрыть"></button>
     <div class="popup__element" id="popup-add__element">
       <h2 class="popup__title">Новое место</h2>
       <form id="popup-add__form" class="popup__form">
-        <input type="text" placeholder="Название" id="popup-add__place" class="popup__text">
-        <input type="url" placeholder="Ссылка на картинку" id="popup-add__link" class="popup__text">
-        <button class="popup__submit-button" id="popup-add__submit-button" aria-label="Submit">
+        <input type="text" placeholder="Название" id="popup-add__place" class="popup__text" required>
+        <input type="url" placeholder="Ссылка на картинку" id="popup-add__link" class="popup__text" required>
+        <button class="popup__submit-button" id="popup-add__submit-button" aria-label="Создать">
           Создать
         </button>
       </form>
     </div>
   </div>
 
+<!--  popup Fullscreen -->
   <div id="popup__fullscreen" class="popup">
-    <article class="popup__fullscreen" id="popup__article">
-      <img class="popup__fullscreen-image" src="#" alt="image">
-      <button aria-label="Close" type="button" id="popup__fullscreen-close" class="popup__close-button popup__close-button_fullscreen"></button>
-      <h2 class="popup__fullscreen-title"></h2>
-      </article>
+      <div class="popup__element popup__element_fullscreen" id="popup-fullscreen__element">
+        <button aria-label="Закрыть" type="button" id="popup__fullscreen-close"
+                class="popup__close-button popup__close-button_fullscreen"></button>
+        <img class="popup__fullscreen-image" src="#" alt="image">
+        <h2 class="popup__fullscreen-title"></h2>
       </div>
-
-</section>
+      </div>
 
   <!--card template-->
   <template class="card-template">
     <article class="card">
-      <button class="card__delete" type="button" aria-label="Delete"></button>
-     <button class="card__image-button">
+      <button class="card__delete" type="button" aria-label="Удалить"></button>
+     <button class="card__image-button" aria-label="Открыть фото">
        <img class="card__image" src="#" alt="image">
      </button>
       <div class="card__info">
         <h2 class="card__title">
         </h2>
-        <button class="card__like" type="button" aria-label="Like"></button>
+        <button class="card__like" type="button" aria-label="Поставить/убрать лайк"></button>
       </div>
     </article>
   </template>
-  <script src="./scripts/index.js"></script>
 </body>
 </html>
