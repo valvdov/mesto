@@ -3,6 +3,7 @@ const selectors = {
   profileJob: '.profile__job',
   profileEditButton: '.profile__edit-button',
   profileAddButton: '.profile__add-button',
+  popup: '.popup',
   popupEdit: '#popup-edit',
   popupEditName: '#popup-edit__name',
   popupEditJob: '#popup-edit__job',
@@ -27,6 +28,7 @@ const selectors = {
   cardLikeActive: '.card__like_active',
   cardImageBtn: '.card__image-button'
 }
+
 //template
 
 const cardTemplate = document.querySelector(selectors.template).content.querySelector(selectors.card);
@@ -41,6 +43,8 @@ const profileJob = document.querySelector(selectors.profileJob);
 //cards
 
 const cards = document.querySelector(selectors.cards);
+
+const popup = document.querySelector(selectors.popup);
 
 //popup edit
 
@@ -69,6 +73,8 @@ const popupFullClose = popupFull.querySelector(selectors.popupFullClose);
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', (event) => popupCloseByEsc(event, popup));
+  popup.addEventListener('click',(event) => popupCloseByOverlay(event, popup));
 }
 
 //function close popup
@@ -142,20 +148,38 @@ initialCards.forEach(function (item){
   renderCard(card, cards);
 })
 
+//function close popup by overlay
+
+const popupCloseByOverlay = function (event, popup) {
+  if (event.target !== event.currentTarget) {
+    return
+  }
+  closePopup(popup);
+}
+
+//function close  popup by "ESC"
+
+function popupCloseByEsc(event, popup) {
+  if(event.key === 'Escape') {
+    closePopup(popup);
+  }
+}
+
 //listener on Profile edit-button and open function and copy info from profile to popup
 
 profileEditButton.addEventListener('click', function () {
   popupEditJob.value = profileJob.textContent;
   popupEditName.value = profileName.textContent;
   openPopup(popupEdit);
+  enableValidation(formEdit);
 });
 
 //listener on Profile add-button and open function with reset form
 
 profileAddButton.addEventListener('click', function () {
-  popupAddLink.value = '';
-  popupAddPlace.value = '';
+  popupAddSubmit.reset();
   openPopup(popupAdd);
+  enableValidation(formAdd);
 });
 
 //listener on popup Edit close-button and open function close
