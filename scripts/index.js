@@ -3,7 +3,6 @@ const selectors = {
   profileJob: '.profile__job',
   profileEditButton: '.profile__edit-button',
   profileAddButton: '.profile__add-button',
-  popup: '.popup',
   popupEdit: '#popup-edit',
   popupEditName: '#popup-edit__name',
   popupEditJob: '#popup-edit__job',
@@ -14,6 +13,8 @@ const selectors = {
   popupAddLink: '#popup-add__link',
   popupAddCloseButton: '#popup-add__close-button',
   popupAddForm: '#popup-add__form',
+  popupAddButton: '#popup-add__submit-button',
+  popupAddButtonInvalid: 'popup__submit-button_invalid',
   popupFull: '#popup__fullscreen',
   popupFullImg: '.popup__fullscreen-image',
   popupFullTitle: '.popup__fullscreen-title',
@@ -44,8 +45,6 @@ const profileJob = document.querySelector(selectors.profileJob);
 
 const cards = document.querySelector(selectors.cards);
 
-const popup = document.querySelector(selectors.popup);
-
 //popup edit
 
 const popupEdit = document.querySelector(selectors.popupEdit);
@@ -61,6 +60,7 @@ const popupAddSubmit = popupAdd.querySelector(selectors.popupAddForm);
 const popupAddPlace = popupAdd.querySelector(selectors.popupAddPlace);
 const popupAddLink = popupAdd.querySelector(selectors.popupAddLink);
 const popupAddClose = popupAdd.querySelector(selectors.popupAddCloseButton);
+const popupAddButton = document.querySelector(selectors.popupAddButton);
 
 //popup fullscreen
 
@@ -73,13 +73,15 @@ const popupFullClose = popupFull.querySelector(selectors.popupFullClose);
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', (event) => popupCloseByEsc(event, popup));
-  popup.addEventListener('click',(event) => popupCloseByOverlay(event, popup));
+  document.addEventListener('keydown', popupCloseByEsc);
+  popup.addEventListener('click', popupCloseByOverlay);
 }
 
 //function close popup
 function closePopup(popup){
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', popupCloseByEsc);
+  popup.removeEventListener('click', popupCloseByOverlay);
 }
 
 //copy info from Edit popup to profile
@@ -150,18 +152,20 @@ initialCards.forEach(function (item){
 
 //function close popup by overlay
 
-const popupCloseByOverlay = function (event, popup) {
+const popupCloseByOverlay = function (event) {
   if (event.target !== event.currentTarget) {
     return
   }
-  closePopup(popup);
+  const openedPopup = document.querySelector('.popup_opened');
+  closePopup(openedPopup);
 }
 
-//function close  popup by "ESC"
+//function close popup by "ESC"
 
-function popupCloseByEsc(event, popup) {
-  if(event.key === 'Escape') {
-    closePopup(popup);
+function popupCloseByEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
   }
 }
 
@@ -171,15 +175,15 @@ profileEditButton.addEventListener('click', function () {
   popupEditJob.value = profileJob.textContent;
   popupEditName.value = profileName.textContent;
   openPopup(popupEdit);
-  enableValidation(formEdit);
 });
 
 //listener on Profile add-button and open function with reset form
 
 profileAddButton.addEventListener('click', function () {
   popupAddSubmit.reset();
+  popupAddButton.setAttribute('disabled', true);
+  popupAddButton.classList.add(selectors.popupAddButtonInvalid);
   openPopup(popupAdd);
-  enableValidation(formAdd);
 });
 
 //listener on popup Edit close-button and open function close

@@ -1,4 +1,4 @@
-.popup__span-error {
+.popup__text-error {
     font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width: 658px) {
-    .popup__span-error {
+    .popup__text-error {
         width: 238px;
     }
 }
