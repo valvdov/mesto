@@ -31,7 +31,7 @@
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__span-error/popup_span-error.css);
+@import url(../blocks/popup/__span-error/popup__span-error.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__close-button/_fullscreen/popup__close-button_fullscreen.css);
