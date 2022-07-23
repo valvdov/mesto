@@ -156,7 +156,7 @@ const popupCloseByOverlay = function (event) {
   if (event.target !== event.currentTarget) {
     return
   }
-    closePopup(event.target);
+    closePopup(event.currentTarget);
 }
 
 //function close popup by "ESC"
