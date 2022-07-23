@@ -1,5 +1,3 @@
-const popupNoError = 'popup__text_no-error';
-
 //show error message
 
 const showFieldError = (formElement, inputElement, errorMessage, { inputErrorClass, errorClass }) => {
@@ -7,7 +5,7 @@ const showFieldError = (formElement, inputElement, errorMessage, { inputErrorCla
     inputElement.classList.add(inputErrorClass);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(errorClass);
-    inputElement.classList.remove(popupNoError);
+    inputElement.classList.remove('popup__text_no-error');
 };
 
 // remove error message
@@ -17,7 +15,7 @@ const hideFieldError = (formElement, inputElement, {inputErrorClass, errorClass}
     inputElement.classList.remove(inputErrorClass);
     errorElement.classList.remove(errorClass);
     errorElement.textContent = '';
-    inputElement.classList.add(popupNoError);
+    inputElement.classList.add('popup__text_no-error');
 };
 
 //check validity
